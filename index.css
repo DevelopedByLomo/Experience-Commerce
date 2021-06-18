@@ -1,0 +1,486 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+
+}
+body,html{
+    height: 100vh;
+}
+
+:root{
+    --color-salmon:#fb6e6e;
+    --color-light-salmon:#fdf1f1;
+    --color-light-black:#374151;
+    --color-light-black-2:#9ca3af;
+    --color-black:#111827;
+    --color-light-gray:#9ca3af;
+}
+
+
+/* the Layout*/
+body{
+    font-size: 1.6rem;
+    display: flex;
+}
+/*The navigation bar*/
+nav{
+    flex: 0 auto;
+    width: 8%;
+    background-color: var(--color-salmon);
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+ul{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--color-light-salmon);
+}
+
+li{
+    margin-top: 40px;
+    padding: 10px;
+}
+
+li:first-child{
+    margin-top: 0;
+    margin-bottom: auto;
+    font-size:2.8rem;
+}
+li:first-child:hover{ 
+    color: inherit;
+}
+
+li:last-child{
+    margin-bottom: auto;
+}
+nav ul li:hover{
+    cursor: pointer;
+    color: var(--color-light-gray);
+
+}
+/*The Order Summary*/
+aside{
+    flex: 0 0 auto;
+    width: 28%;
+    background-color:inherit;
+    padding: 20px 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--color-light-black);
+    box-shadow: 10px 10px 20px #111827;
+    z-index: 2;
+}
+/*styling the order section*/
+.img-area{
+    width: 70px;
+    height: 70px;
+}
+.img-area img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+
+}
+aside div:nth-child(2){
+    margin-top: 10px;
+}
+.order-placed{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+/*the total amount area*/
+.final{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: double 1px var(--color-light-black-2) ;
+}
+/* to make the amount and order black*/
+.important{
+    color: black;
+    font-weight: 900;
+    font-size: 2rem
+}
+/* style for the button*/
+.btn{
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--color-salmon);
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/*The container holding the middle section*/
+main{
+    flex:1 1 100% ;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius: 20px;
+    margin-left: -20px;
+    position: relative;
+    background-color: var(--color-light-salmon);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+
+/* the header (the search bar add the profile name side ) */
+header{ 
+    height: 8%;
+    border-top-left-radius:20px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-bottom: 20px;
+}
+.search-bar{
+    outline: none;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    color: var(--color-black);
+    padding: 8px;
+}
+/* To set the active and focus states of the search bar */
+.search-bar:focus,.search-bar:active{
+    border: var(--color-light-gray) 1px solid;
+}
+/* the profile side */
+.profile{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.profile-img{
+    background-image: url(./images/karl.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.profile-img:hover{
+    cursor: pointer;
+}
+
+
+/* the best experience part */
+
+.article1{
+    flex: 0 1 auto;
+    margin-bottom: 60px;
+}
+.experience-pictures{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap   row ;
+    gap:2px;
+
+}
+
+.experience1{
+    width: 24%;
+    flex:  0 1  auto;
+
+    height: 200px;
+    color: white;
+}
+
+.experience-details{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.2rem;
+}
+.experience-ratings{
+    display: flex;
+    margin-top: 8px;
+}
+.fa{
+    margin-right: 3px;
+}
+.xp-rate,
+.xp-days{
+    display: flex;
+    align-items: center;
+}
+.xp-rate{
+    margin-left: 30px;
+}
+.xp-imgs{
+    padding: 8px;
+    background-size:cover;
+    background-position: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .3s ease-in-out ;
+    transition: all .3s ease-in-out ;
+}
+/* adding some transitions i learnt from George */
+.xp-imgs:hover{
+    transform: scale(1.15) rotate(7deg);
+    z-index: 10;
+    cursor: pointer;
+
+}
+/* to set the pictures for the background */
+/* i dont want to put it in .xp-imgs so i'm doing it here */
+.epbg1{
+    background-image: url(./images/lake.png);
+}
+.epbg2{
+    background-image: url(./images/mountain.png);
+}
+.epbg3{
+    background-image: url(./images/desert.png);
+}
+.epbg4{
+    background-image: url(./images/beach.png);
+}
+
+
+
+
+/* to deal with the hotel section */
+
+.article2{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.hotels-available{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    font-size: 1.2rem;
+}
+.hotel1{
+    border-radius: 15px;
+    padding: 10px;
+    flex: 0 1 30%;
+    height: 73px;
+    display: flex;
+    background-color: white;
+    cursor: pointer;
+
+}
+
+.hotel-image{
+    width: 50px;
+    height: 100%;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.hotel-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hotel-image{
+    background-position: center;
+    background-size: cover;
+}
+/* the pictures of the hotel section */
+.hot-img1{
+    background-image: url(./images/hotel-1.png);
+}
+
+.hot-img2{
+    background-image: url(./images/hotel-3.png);
+}
+
+.hot-img3{
+    background-image: url(./images/hotel-4.png);
+}
+.experience-header{
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+
+
+/* the responsive part of the site */
+
+
+@media screen and (max-width:1921px){
+
+    .experience-pictures{
+        justify-content: space-between;
+        flex-flow: wrap   row ;
+        gap:2px;
+    
+    }
+    
+    .experience1{
+        width: 24%;
+        flex:  0 1  auto;
+    }    
+
+}
+
+@media screen and (max-width:1280px){
+    .experience-pictures{
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap   row ;
+        gap:20px;
+    
+    }
+    
+    .experience1{
+        width: 30%;
+        height: 200px;
+        color: white;
+        flex:  0 1  auto;
+    }
+    .hotels-available{
+        gap: 20px;
+    }
+    .hotel1{
+        flex: 0 1 40%;
+    }
+    
+    
+}
+
+
+
+@media screen and (max-width:1024px){
+
+    .experience-pictures{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-flow: wrap   row ;
+        gap:10px
+    }
+    
+
+
+    .experience1{
+        height: 200px;
+        color: white;
+        flex:  0 1 49% ;
+    }
+
+    .hotel1{
+        flex: 0 1 30%;
+    }
+    
+    
+
+}
+
+
+@media screen and (max-width:908px){
+    
+    aside{
+        display: none;}
+    
+
+}
+
+
+
+@media screen and (max-width:820px){
+    main{
+        padding:10  0;
+        flex-direction: column;
+        align-items: stretch;
+        border-top-left-radius:0px ;
+        border-bottom-left-radius: 0px;
+        margin-left: 0px;
+        position: static;
+    
+
+    }
+    .profile{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    
+    
+    body{
+        flex-direction: column;
+    }
+
+    nav{
+    display: none;
+}
+.experience-header{
+    margin:15px 0 ;
+
+}
+
+.search-bar{
+    width: 100%;
+    order: 2;
+}
+header{
+    flex-wrap: wrap;
+}
+.hotel1{
+    flex: 0 1 40%;
+}
+
+}
+
+
+
+@media screen and (max-width:558px){
+
+
+        .experience-pictures{
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+    
+    }
+    .experience1{
+        width: 100%;
+        height: 200px;
+        color: white;
+        flex:  1 1  auto;
+    }
+    .hotel1{
+        flex: 0 1 100%;
+    }
+    
+
+}
